@@ -131,7 +131,7 @@ You should see something like the below:
 
 ![](./pictures/messages_stream.png)
 
-## One Step Further
+## :rocket: One Step Further
 
 To go one step further, we will leverage the schema registry to enforce [schema validation](https://docs.confluent.io/platform/current/schema-registry/schema-validation.html#sv-on-cs). When running the Java application, as the `SALES` topic was originally not registered, it was auto-created when publishing to it. And by default at topic creation, schema validation is not enabled; even though the producer did register the schema in the schema registry.
 
@@ -189,3 +189,7 @@ org.apache.kafka.common.InvalidRecordException: Log record DefaultRecord(offset=
 As you can see, sending messages that do not fit the schema will throw `org.apache.kafka.common.InvalidRecordException`. This ensures that contaminated records will not propagate to the consumers, and ultimately to the downstream applications.
 
 You can start producing normally again using the producer which will send messages fitting the schema! Et voilà! :tada:
+
+## :next_track_button: What is Coming Next?
+
+This repo will be published as a blog post on [Acosom website](https://acosom.com/). In the following post (and repo), we will be using the introduced infra and concepts to get started with [Apache Flink](https://flink.apache.org/). We will use this fictitious sales data producer to create a streaming analytics pipeline with Flink using the multiple APIs. Now the cool things start :chipmunk:! You can follow my posts and be notified when the blog posts release by following me on [Twitter](https://twitter.com/theodore_curtil) :baby_chick:
