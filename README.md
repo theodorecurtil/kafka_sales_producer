@@ -95,12 +95,38 @@ One can run the application directly in the CLI using the `java` command, or in 
 
 You can run the producer locally using the java CLI. The `App.java` main method takes some command line arguments for the adress of the Kafka server, and of the schema registry. Because yes, in this repo we are also going to play around with [Confluent's schema registry](https://docs.confluent.io/platform/current/schema-registry/index.html#sr-overview). For a video intro about the schema registry, and why you should use the schema registry in th first place; refer to [this video](https://developer.confluent.io/learn-kafka/schema-registry/key-concepts/).
 
+Assuming you started the Kafka cluster using the proposed method, the Kafka broker should be running on `localhost:9092`, and the schema registry on `localhost:8081`. If you picked a different port mapping, update the value for ports and type the command below to start producing events:
+
 ```console
 java -Dkafka.server.ip=http://localhost:9092 -Dschema.registry.ip=http://localhost:8081 -jar target/kafka_producer-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
-Alternatively, you can also run the application inside a Docker container running the command
+### In a Docker Container
+
+Alternatively, you can also run the application inside a Docker container. If you run the producer in a Docker container, the Kafka and schema registry services are not local to the producer anymore. So you have to connect the producer to the network where those containers are running, and address them using their containers names. Again, if you followed the proposed approach to get the infra running, the Kafka broker will be running on `http://broker:29092`, and the schema registry on `http://schema-registry:8081`; and all these containers should be running on the `kafka_101_default` network.
+
+To check that this is indeed the case, check that the network does exist:
+
+```console
+docker network ls
+```
+
+To check that the broker and the schema registry are indeed connected to this network, type
+
+```console
+docker network inspect kafka_101_default
+```
+
+Get the producer producing, by running the command
 
 ```console
 docker run --name my_producer --network <kafka-infra-network> -e KAFKASERVER=http://<kafka-server-container-name>:29092 -e SCHEMAREGISTRY=http://<schema-registry-container-name>:8081  kafka_sales_producer:latest
 ```
+
+## :stethoscope: Sanity Checks
+
+By default, the producer should be producing messages in the auto-created `SALES` topic at a frequency of 1 msg/s. To check that messages are indeed being produced; go to the Confluent control center UI on [localhost:9021](http://localhost:9021/clusters) and navigate to the Topics tab. Click on the `SALES` topic and then on the `Messages` tab. You should see messages reaching the cluster there.
+
+You should see something like the below:
+
+![](./pictures/messages_stream.png)
