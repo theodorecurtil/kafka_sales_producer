@@ -9,7 +9,7 @@ The project was developed using `openjdk 11.0.18` and built with `Apache Maven 3
 
 To check your version of java and Maven, type the following commands; with the output for my configuration below.
 
-```console
+```bash
 ## Check Java version
 ($)> java --version
 openjdk 11.0.18 2023-01-17
