@@ -36,7 +36,7 @@ Docker version 23.0.1, build a5ee5b1dfc
 This image can be pulled from my [dockerhub repo](https://hub.docker.com/u/theodorecurtil).
 
 
-## Build the project
+## :building_construction: Build the project
 
 Build the project using
 
