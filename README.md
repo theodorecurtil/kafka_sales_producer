@@ -56,13 +56,13 @@ If you want to play around with the Kafka producer, you can do so and build the 
 mvn clean compile assembly:single
 ```
 
-:whale: You can also use the provided [Dockerfile](https://github.com/theodorecurtil/kafka_sales_producer/blob/main/Dockerfile) to build your own Docker image running your producer. To build your local image, run the command
+:whale: You can also use the provided [Dockerfile](https://github.com/theodorecurtil/kafka_sales_producer/blob/main/Dockerfile) to build your own Docker image running your producer. To build your local image, run the following command from within the `./kafka_sales_producer` folder.
 
 ```console
 docker build -t <image-name> .
 ```
 
-## Run the Application
+## :running: Run the Application
 
 You can run the producer locally using the java CLI
 
