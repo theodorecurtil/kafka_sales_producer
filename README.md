@@ -42,12 +42,12 @@ This image can be pulled from my [dockerhub repo](https://hub.docker.com/u/theod
 
 The first step is to clone this repository. `cd` into the folder where you want to host this project's repo and type the command
 
-```bash
+```console
 ## Clone repo
-($)> git clone git@github.com:theodorecurtil/kafka_sales_producer.git
+git clone git@github.com:theodorecurtil/kafka_sales_producer.git
 
 ## cd into the repo
-($)> cd ./kafka_sales_producer
+cd ./kafka_sales_producer
 ```
 
 If you want to play around with the Kafka producer, you can do so and build the application's jar-file using the following command within the `./kafka_sales_producer` folder.
