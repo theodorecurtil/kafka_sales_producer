@@ -120,7 +120,7 @@ docker network inspect kafka_101_default
 Get the producer producing, by running the command
 
 ```console
-docker run --name my_producer --network <kafka-infra-network> -e KAFKASERVER=http://<kafka-server-container-name>:29092 -e SCHEMAREGISTRY=http://<schema-registry-container-name>:8081  kafka_sales_producer:latest
+docker run --name my_producer --network <kafka-infra-network> -e KAFKASERVER=http://<kafka-server-container-name>:29092 -e SCHEMAREGISTRY=http://<schema-registry-container-name>:8081  theodorecurtil/kafka_sales_producer:latest
 ```
 
 ## :stethoscope: Sanity Checks
