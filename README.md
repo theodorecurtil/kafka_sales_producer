@@ -62,6 +62,31 @@ mvn clean compile assembly:single
 docker build -t <image-name> .
 ```
 
+## :factory: The Infrastructure
+
+This repo only contains the Java application that publishes messages to an existing Kafka cluster. This means that this code won't run except it can pusblish messages to an existing Kafka cluster. In order to get this application to run, we need to start a Kafka cluster and related services...
+
+:tada: The good thing is that this was the subject of my previous [blog post](https://acosom.com/)! To get a running local Kafka infrastructure is easy: simply refer to my [github repo](https://github.com/theodorecurtil/kafka_101) that accompanies the blog post.
+
+To get the cluster up and running do the following
+
+```console
+## Clone repo
+git clone git@github.com:theodorecurtil/kafka_101.git
+
+## Docker compose up
+cd ./kafka_101 && docker-compose up -d
+```
+
+You should see 4 services running on the Docker network `kafka_101_default`:
+
+1. control-center
+2. schema-registry
+3. broker
+4. zookeeper
+
+Now that the infrastructure is running, we can start the Kafka producer!
+
 ## :running: Run the Application
 
 You can run the producer locally using the java CLI
