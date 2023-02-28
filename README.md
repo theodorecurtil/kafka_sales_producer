@@ -89,7 +89,11 @@ Now that the infrastructure is running, we can start the Kafka producer!
 
 ## :running: Run the Application
 
-You can run the producer locally using the java CLI
+One can run the application directly in the CLI using the `java` command, or in a Docker container (which I recommend as a good practice).
+
+### In the CLI
+
+You can run the producer locally using the java CLI. The `App.java` main method takes some command line arguments for the adress of the Kafka server, and of the schema registry. Because yes, in this repo we are also going to play around with [Confluent's schema registry](https://docs.confluent.io/platform/current/schema-registry/index.html#sr-overview). For a video intro about the schema registry, and why you should use the schema registry in th first place; refer to [this video](https://developer.confluent.io/learn-kafka/schema-registry/key-concepts/).
 
 ```console
 java -Dkafka.server.ip=http://localhost:9092 -Dschema.registry.ip=http://localhost:8081 -jar target/kafka_producer-1.0-SNAPSHOT-jar-with-dependencies.jar
