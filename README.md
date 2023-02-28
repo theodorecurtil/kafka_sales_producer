@@ -36,13 +36,21 @@ Docker version 23.0.1, build a5ee5b1dfc
 This image can be pulled from my [dockerhub repo](https://hub.docker.com/u/theodorecurtil).
 
 
-## :building_construction: Build the project
+## :building_construction: Build the Project
 
-Build the project using
+If you want to play around with the Kafka producer, you can do so and build the application using the following command.
 
 ```console
 mvn clean compile assembly:single
 ```
+
+:whale: You can also use the provided [Dockerfile](https://github.com/theodorecurtil/kafka_sales_producer/blob/main/Dockerfile) to build your own Docker image running your producer. To build your local image, run the command
+
+```console
+docker build -t <image-name> .
+```
+
+## Run the Application
 
 You can run the producer locally using the java CLI
 
