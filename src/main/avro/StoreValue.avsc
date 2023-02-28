@@ -1,0 +1,22 @@
+{
+	"type": "record",
+	"name": "StoreSale",
+	"namespace": "com.acosom",
+	"fields": [
+		{
+            "name": "store_id",
+            "type":"string",
+            "doc": "ID of the store where the sale was made."
+        },
+        {
+            "name": "sale_amount",
+            "type":"int",
+            "doc": "Amount of the sale in local currency. This value is an integer."
+        },
+        {
+            "name": "sale_ts",
+            "type":"long",
+            "doc": "Epoch timestamp when the sale happened."
+        }
+	]
+}
