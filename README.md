@@ -25,7 +25,7 @@ Default locale: en_US, platform encoding: UTF-8
 OS name: "linux", version: "6.1.12-arch1-1", arch: "amd64", family: "unix"
 ```
 
-If you do not have these configs, or if you do not have/do not want to install Java and Maven; I also bulit a Docker image for this small Java application. Make sure to have [Docker installed](https://docs.docker.com/get-docker/). My Docker config is
+If you do not have these configs, or if you do not have/do not want to install Java and Maven; I also built a Docker image for this small Java application. Make sure to have [Docker installed](https://docs.docker.com/get-docker/). My Docker config is
 
 ```bash
 ## Check Docker version
@@ -33,6 +33,7 @@ If you do not have these configs, or if you do not have/do not want to install J
 Docker version 23.0.1, build a5ee5b1dfc
 ```
 
+This image can be pulled from my [dockerhub repo](https://hub.docker.com/u/theodorecurtil).
 
 
 ## Build the project
@@ -41,4 +42,16 @@ Build the project using
 
 ```console
 mvn clean compile assembly:single
+```
+
+You can run the producer locally using the java CLI
+
+```console
+java -Dkafka.server.ip=http://localhost:9092 -Dschema.registry.ip=http://localhost:8081 -jar target/kafka_producer-1.0-SNAPSHOT-jar-with-dependencies.jar
+```
+
+Alternatively, you can also run the application inside a Docker container running the command
+
+```console
+docker run --name my_producer --network <kafka-infra-network> -e KAFKASERVER=http://<kafka-server-container-name>:29092 -e SCHEMAREGISTRY=http://<schema-registry-container-name>:8081  kafka_sales_producer:latest
 ```

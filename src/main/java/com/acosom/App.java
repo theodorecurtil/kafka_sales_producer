@@ -10,6 +10,7 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 import io.confluent.kafka.serializers.KafkaAvroSerializer;
+import java.lang.IllegalArgumentException;
 
 public class App 
 {
@@ -18,7 +19,9 @@ public class App
         String kafkaServerIP = System.getProperty("kafka.server.ip");
         String schemaRegistryIP = System.getProperty("schema.registry.ip");
 
-        System.out.println(kafkaServerIP);
+        if (kafkaServerIP == null || schemaRegistryIP == null || kafkaServerIP.isEmpty() || schemaRegistryIP.isEmpty()) {
+            throw new IllegalArgumentException("You have to set value for the Kafka server IP and the schema registry IP. With the Docker image, use env variables KAFKASERVER and SCHEMAREGISTRY; if running with the CLI use CLI arguments -Dkafka.server.ip=<kafka-server-ip:port> and -Dschema.registry.ip=<schema-registry-ip:port>");
+        };
 
         // KafkaProducer
         Properties properties = new Properties();

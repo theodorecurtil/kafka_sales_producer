@@ -7,7 +7,7 @@ WORKDIR /app
 
 COPY src ./src
 COPY pom.xml .
-# RUN mvn -f /home/app/pom.xml clean package
+
 RUN mvn clean compile assembly:single
 
 #
@@ -16,8 +16,8 @@ RUN mvn clean compile assembly:single
 FROM openjdk:11-jre-slim
 WORKDIR /app
 
-ENV KAFKASERVER=http://broker:29092
-ENV SCHEMAREGISTRY=http://schema-registry:8081
+# ENV KAFKASERVER=http://broker:29092
+# ENV SCHEMAREGISTRY=http://schema-registry:8081
 
 COPY --from=build /app/target/kafka_producer-1.0-SNAPSHOT-jar-with-dependencies.jar .
 
