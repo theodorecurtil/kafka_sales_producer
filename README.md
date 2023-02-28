@@ -7,7 +7,7 @@ Good blog post --> https://codersee.com/how-to-deploy-multiple-kafka-brokers-wit
 
 The project was developed using `openjdk 11.0.18` and built with `Apache Maven 3.8.7`.
 
-To check your version of java and Maven, type the following commands; with the output for my configuration below.
+To check your version of Java and Maven, type the following commands; with the output for my configuration below.
 
 ```bash
 ## Check Java version
@@ -24,6 +24,15 @@ Java version: 11.0.18, vendor: Oracle Corporation, runtime: /usr/lib/jvm/java-11
 Default locale: en_US, platform encoding: UTF-8
 OS name: "linux", version: "6.1.12-arch1-1", arch: "amd64", family: "unix"
 ```
+
+If you do not have these configs, or if you do not have/do not want to install Java and Maven; I also bulit a Docker image for this small Java application. Make sure to have [Docker installed](https://docs.docker.com/get-docker/). My Docker config is
+
+```bash
+## Check Docker version
+($)> docker --version
+Docker version 23.0.1, build a5ee5b1dfc
+```
+
 
 
 ## Build the project
