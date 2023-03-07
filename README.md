@@ -1,8 +1,3 @@
-Enforce schema validation --> https://docs.confluent.io/platform/current/schema-registry/schema-validation.html#sv-on-cs
-
-Good blog post --> https://codersee.com/how-to-deploy-multiple-kafka-brokers-with-docker-compose/
-
-
 ## :computer: Requirements
 
 The project was developed using `openjdk 11.0.18` and built with `Apache Maven 3.8.7`.
@@ -33,7 +28,7 @@ If you do not have these configs, or if you do not have/do not want to install J
 Docker version 23.0.1, build a5ee5b1dfc
 ```
 
-This image can be pulled from my [dockerhub repo](https://hub.docker.com/u/theodorecurtil).
+The application's image can be pulled from my [dockerhub repo](https://hub.docker.com/u/theodorecurtil).
 
 
 ## :building_construction: Build the Project
