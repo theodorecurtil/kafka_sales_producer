@@ -1,3 +1,9 @@
+<br>
+
+[![Button Acosom]][LinkAcosom] [![Button Twitter]][LinkTwitter] [![Button Linkedin]][LinkLinkedin]
+
+<br>
+
 ## :computer: Requirements
 
 The project was developed using `openjdk 11.0.18` and built with `Apache Maven 3.8.7`.
@@ -188,3 +194,13 @@ You can start producing normally again using the producer which will send messag
 ## :next_track_button: What is Coming Next?
 
 This repo will be published as a blog post on [Acosom website](https://acosom.com/). In the following post (and repo), we will be using the introduced infra and concepts to get started with [Apache Flink](https://flink.apache.org/). We will use this fictitious sales data producer to create a streaming analytics pipeline with Flink using the multiple APIs. Now the cool things start :chipmunk:! You can follow my posts and be notified when the blog posts release by following me on [Twitter](https://twitter.com/theodore_curtil) :baby_chick:
+
+<!---------------------------------------------------------------------------->
+
+[Button Acosom]: https://img.shields.io/badge/Acosom-Read%20blog%20post-orange
+[Button Twitter]: https://img.shields.io/twitter/follow/theodore_curtil?style=social
+[Button Linkedin]: https://img.shields.io/badge/LinkedIn-Follow%20Acosom-blue
+
+[LinkAcosom]: https://acosom.com/blog/kafka-101-kafka-sales-producer-with-apache-avro 'Read on acosom.com'
+[LinkTwitter]: https://twitter.com/theodore_curtil 'Follow me on Twitter :)'
+[LinkLinkedin]: https://ch.linkedin.com/company/acosom 'Follow us on LinkedIn :)'
