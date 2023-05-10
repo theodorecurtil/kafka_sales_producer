@@ -201,6 +201,6 @@ This repo will be published as a blog post on [Acosom website](https://acosom.co
 [Button Twitter]: https://img.shields.io/twitter/follow/theodore_curtil?style=social
 [Button Linkedin]: https://img.shields.io/badge/LinkedIn-Follow%20Acosom-blue
 
-[LinkAcosom]: https://acosom.com/blog/kafka-101-kafka-sales-producer-with-apache-avro 'Read on acosom.com'
+[LinkAcosom]: https://acosom.com/en/blog/kafka-101-kafka-sales-producer-with-apache-avro/?utm_source=github&utm_medium=social&utm_campaign=blog%20post 'Read on acosom.com'
 [LinkTwitter]: https://twitter.com/theodore_curtil 'Follow me on Twitter :)'
 [LinkLinkedin]: https://ch.linkedin.com/company/acosom 'Follow us on LinkedIn :)'
